@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+    android:background="@color/cyan_dark_ford">
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/source_text"
+            style="@style/BrandFontBody"
+            android:textColor="@android:color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintRight_toLeftOf="@id/guideline_source"
+            tools:text="point 2" />
+
+        <android.support.v7.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_arrow"
+            app:layout_constraintLeft_toRightOf="@id/guideline_arrow"
+            app:layout_constraintTop_toTopOf="@id/source_text"
+            app:layout_constraintBottom_toBottomOf="@id/source_text"/>
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/destination_text"
+            style="@style/BrandFontBody"
+            android:textColor="@android:color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@id/guideline_destination"
+            tools:text="point 2" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/mode_text"
+        style="@style/BrandFontBody"
+        android:textColor="@android:color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@id/guideline_mode"
+        tools:text="point 2" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guideline_source"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.40" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guideline_arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.45" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guideline_destination"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.50" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline_mode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.90" />
+
+    </android.support.constraint.ConstraintLayout>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.ford.navigation.MainActivity">
+
+
+
+    <android.support.v7.widget.AppCompatSpinner
+        android:id="@+id/source_selector_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias=".5"
+        app:layout_constraintHorizontal_bias=".1"/>
+
+
+    <android.support.v7.widget.AppCompatSpinner
+        android:id="@+id/destination_selector_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/source_selector_spinner"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias=".9"
+        app:layout_constraintVertical_bias=".5"/>
+
+    <Button
+        android:id="@+id/navigate_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Navigate"
+        android:onClick="navigate"
+        android:background="@color/cyan_dark_ford"
+        app:layout_constraintTop_toBottomOf="@id/destination_selector_spinner"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <TextView
+        android:id="@+id/source_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Source"
+        app:layout_constraintBottom_toTopOf="@id/source_selector_spinner"
+        app:layout_constraintStart_toStartOf="@id/source_selector_spinner"
+        app:layout_constraintEnd_toEndOf="@id/source_selector_spinner"
+        app:layout_constraintHorizontal_bias=".5"
+        android:layout_marginBottom="10dp"
+        style="@style/BrandFontBody"/>
+
+    <TextView
+        android:id="@+id/destination_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Destination"
+        android:layout_marginBottom="10dp"
+        style="@style/BrandFontBody"
+        app:layout_constraintBottom_toTopOf="@id/destination_selector_spinner"
+        app:layout_constraintStart_toStartOf="@id/destination_selector_spinner"
+        app:layout_constraintEnd_toEndOf="@id/destination_selector_spinner"
+        app:layout_constraintHorizontal_bias=".5"/>
+
+</android.support.constraint.ConstraintLayout>
