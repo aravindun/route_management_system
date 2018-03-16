@@ -1,18 +1,20 @@
 package com.ford.navigation;
+
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class FinalJourney implements Parcelable{
+public class FinalJourney implements Parcelable {
 
+    private int totaltime;
     private int totalcost;
     private int totaldistance;
-    private int totaltime;
     private String kpi;
-    private List<Hop1> hops;
+    private ArrayList<Hop1> hops;
 
-    public FinalJourney(int totaltime, int totalcost, int totaldistance, String kpi, List<Hop1> hops) {
+    public FinalJourney(int totaltime, int totalcost, int totaldistance, String kpi, ArrayList<Hop1> hops) {
         this.totaltime = totaltime;
         this.totalcost = totalcost;
         this.totaldistance = totaldistance;
@@ -21,11 +23,11 @@ public class FinalJourney implements Parcelable{
     }
 
     protected FinalJourney(Parcel in) {
+        totaltime = in.readInt();
         totalcost = in.readInt();
         totaldistance = in.readInt();
-        totaltime = in.readInt();
         kpi = in.readString();
-        hops = in.readParcelable(List.class.getClassLoader());
+        hops = (ArrayList<Hop1>) in.readSerializable();
     }
 
     public static final Creator<FinalJourney> CREATOR = new Creator<FinalJourney>() {
@@ -40,16 +42,16 @@ public class FinalJourney implements Parcelable{
         }
     };
 
+    public int getTotaltime() {
+        return totaltime;
+    }
+
     public int getTotalcost() {
         return totalcost;
     }
 
     public int getTotaldistance() {
         return totaldistance;
-    }
-
-    public int getTotaltime() {
-        return totaltime;
     }
 
     public String getKpi() {
@@ -67,9 +69,10 @@ public class FinalJourney implements Parcelable{
 
     @Override
     public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeInt(totaltime);
         parcel.writeInt(totalcost);
         parcel.writeInt(totaldistance);
-        parcel.writeInt(totaltime);
         parcel.writeString(kpi);
+        parcel.writeSerializable(hops);
     }
 }

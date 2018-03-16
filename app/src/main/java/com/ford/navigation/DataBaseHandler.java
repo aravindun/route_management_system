@@ -60,10 +60,10 @@ public class DataBaseHandler extends SQLiteOpenHelper {
     public int insertIntoSourceTable(String source) {
 
         ContentValues values = new ContentValues();
-        values.put("name", source);
+        values.put("name", source.toUpperCase());
 
         db.insert("SOURCE", null, values);
-        return getSourceID(source);
+        return getSourceID(source.toUpperCase());
     }
 
     public int insertIntoNeighborTable(int sourceID, int neighborID, int modeID, int time, int cost, int distance) {
@@ -156,7 +156,7 @@ public class DataBaseHandler extends SQLiteOpenHelper {
 
     public int getSourceID(String source) {
         String selectQuery = "SELECT id FROM SOURCE where name = ?";
-        Cursor cursor = db.rawQuery(selectQuery, new String[] {source});
+        Cursor cursor = db.rawQuery(selectQuery, new String[] {source.toUpperCase()});
 
         if (cursor.moveToFirst()) {
             return cursor.getInt(0);
@@ -168,7 +168,7 @@ public class DataBaseHandler extends SQLiteOpenHelper {
     public int getSourceID1(String source) {
         SQLiteDatabase db = this.getReadableDatabase();
         String selectQuery = "SELECT id FROM SOURCE where name = ?";
-        Cursor cursor = db.rawQuery(selectQuery, new String[] {source});
+        Cursor cursor = db.rawQuery(selectQuery, new String[] {source.toUpperCase()});
 
         if (cursor.moveToFirst()) {
             return cursor.getInt(0);
@@ -287,7 +287,7 @@ public class DataBaseHandler extends SQLiteOpenHelper {
     }
 
     public void insertModeTable() {
-        String[] modes = new String[] {"Bus", "Metro", "LocalTrain", "Ola", "FordShuttle"};
+        String[] modes = new String[] {"Bus", "Metro", "LocalTrain", "Uber", "Shuttle"};
 
         for (String mode: modes) {
             ContentValues values = new ContentValues();

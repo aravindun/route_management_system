@@ -1,19 +1,30 @@
-source,neighbor,mode,time,cost,comfort
-thoraipakam,perungudi,Bus,1200,15,5500
-thoraipakam,perungudi,Ola,600,50,5500
-perungudi,thoraipakam,Bus,1200,15,5500
-perungudi,thoraipakam,FordShuttle,800,20,5500
-perungudi,tiruvanmayur,LocalTrain,500,5,2200
-perungudi,tiruvanmayur,Ola,400,40,2200
-perungudi,tiruvanmayur,FordShuttle,700,15,2200
-perungudi,taramani,FordShuttle,300,10,1700
-perungudi,taramani,Bus,600,5,1700
-tiruvanmayur,perungudi,Metro,200,24,2200
-tiruvanmayur,perungudi,LocalTrain,300,5,2200
-taramani,perungudi,Ola,200,30,1700
-taramani,perungudi,Bus,500,12,1700
-taramani,tiruvanmayur,Metro,100,20,800
-taramani,tiruvanmayur,FordShuttle,150,15,800
-tiruvanmayur,taramani,LocalTrain,150,5,800
-tiruvanmayur,taramani,Ola,80,26,800
-tiruvanmayur,taramani,Bus,210,8,800
+source,neighbor,mode,time,cost,distance
+Kovalam,Thiruvanmiyur,Uber,60,120,50
+Kovalam,Thiruvanmiyur,Bus,80,100,50
+Kovalam,Thoraipakkam,Bus,60,60,40
+Kovalam,Thoraipakkam,Uber,40,80,40
+Kovalam,Sholinganallur,LocalTrain,30,30,20
+Kovalam,Sholinganallur,Bus,60,40,20
+Sholinganallur,Tambaram,Shuttle,20,20,10
+Sholinganallur,Tambaram,Metro,15,30,10
+Tambaram,Velachery,Uber,30,50,15
+Tambaram,Velachery,LocalTrain,15,15,15
+Tambaram,Velachery,Bus,20,30,15
+Velachery,SRP tools,Metro,5,20,3
+Velachery,SRP tools,Shuttle,10,10,3
+SRP tools,Thiruvanmiyur,Uber,15,30,5
+SRP tools,Thiruvanmiyur,Bus,20,5,5
+Thoraipakkam,Perungudi,Shuttle,5,15,5
+Thoraipakkam,Perungudi,Uber,10,30,5
+Perungudi,Thiruvanmiyur,Shuttle,15,20,10
+Perungudi,Thiruvanmiyur,LocalTrain,15,15,10
+Perungudi,Thiruvanmiyur,Metro,10,30,10
+Perungudi,Thiruvanmiyur,Bus,20,15,10
+Sholinganallur,Thoraipakkam,Bus,15,30,17
+Sholinganallur,Thoraipakkam,Uber,15,80,17
+Sholinganallur,Thoraipakkam,Metro,15,50,17
+Thoraipakkam,Velachery,Bus,15,10,5
+Thoraipakkam,Velachery,Uber,5,20,5
+Velachery,Perungudi,Shuttle,5,10,4
+Perungudi,SRP tools,Shuttle,5,10,2
+Perungudi,SRP tools,Bus,10,10,2

@@ -91,18 +91,20 @@ public class JourneyMapper {
         int totaltime = 0;
         int totalCost = 0;
         int totalDistance = 0;
-        List<Hop1> hops = new ArrayList<>();
+        ArrayList<Hop1> hops = new ArrayList<>();
         int nextHopId = sourceId;
         while (true) {
             if (nextHopId == destinationId) {
                 break;
             }
             Hop1 hop1 = dataBaseHandler.getNextHopNode(nextHopId, destinationId, kpi);
-            hops.add(hop1);
-            totaltime += hop1.getTime();
-            totalCost += hop1.getCost();
-            totalDistance += hop1.getDistance();
-            nextHopId = dataBaseHandler.getSourceID1(hop1.getNeighbor());
+            if (hop1 != null) {
+                hops.add(hop1);
+                totaltime += hop1.getTime();
+                totalCost += hop1.getCost();
+                totalDistance += hop1.getDistance();
+                nextHopId = dataBaseHandler.getSourceID1(hop1.getNeighbor());
+            }
         }
         return new FinalJourney(totaltime, totalCost, totalDistance, kpi, hops);
     }

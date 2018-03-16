@@ -51,11 +51,17 @@ public class MainActivity extends AppCompatActivity {
 
         JourneyMapper journeyMapper = new JourneyMapper(dataBaseHandler);
 
-        Intent intent = new Intent(this, RouteInfoActivity.class);
 
-        intent.putExtra("time", journeyMapper.getJourney(source, destination, JourneyMapper.KPI.TIME));
-        intent.putExtra("cost", journeyMapper.getJourney(source, destination, JourneyMapper.KPI.COST));
-        intent.putExtra("distance", journeyMapper.getJourney(source, destination, JourneyMapper.KPI.DISTANCE));
+        Bundle b = new Bundle();
+        FinalJourney time = journeyMapper.getJourney(source, destination, JourneyMapper.KPI.TIME);
+        b.putParcelable("time", time);
+        FinalJourney cost = journeyMapper.getJourney(source, destination, JourneyMapper.KPI.COST);
+        b.putParcelable("cost", cost);
+        FinalJourney distance = journeyMapper.getJourney(source, destination, JourneyMapper.KPI.DISTANCE);
+        b.putParcelable("distance", distance);
+        Intent intent = new Intent(this, RouteInfoActivity.class);
+        intent.putExtra("bundle", b);
+
         startActivity(intent);
     }
 }

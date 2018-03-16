@@ -1,6 +1,9 @@
 
 package com.ford.navigation;
-public class Hop1 {
+
+import java.io.Serializable;
+
+public class Hop1 implements Serializable {
 
     private int cost;
     private int distance;
