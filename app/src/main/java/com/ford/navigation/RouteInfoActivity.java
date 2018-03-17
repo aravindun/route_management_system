@@ -33,16 +33,16 @@ public class RouteInfoActivity extends AppCompatActivity{
         cost.setText("$"+shortestCost.getTotalcost());
 
         AppCompatTextView distance = findViewById(R.id.cheapest_distance);
-        distance.setText(shortestCost.getTotaldistance()/1000+"km");
+        distance.setText(shortestCost.getTotaldistance()+" km");
 
         AppCompatTextView fastestDist = findViewById(R.id.fastest_distance);
-        fastestDist.setText(shortestDistance.getTotaldistance()/1000+"km");
+        fastestDist.setText(shortestTime.getTotaldistance()+" km");
         AppCompatTextView fastestcost = findViewById(R.id.fastest_price);
-        fastestcost.setText("$"+shortestDistance.getTotalcost());
+        fastestcost.setText("$"+shortestTime.getTotalcost());
         AppCompatTextView shortestcost = findViewById(R.id.shortest_price);
-        shortestcost.setText("$"+shortestTime.getTotalcost());
+        shortestcost.setText("$"+shortestDistance.getTotalcost());
         AppCompatTextView shortestDist = findViewById(R.id.shortest_distance);
-        shortestDist.setText(shortestTime.getTotaldistance()/1000+"km");
+        shortestDist.setText(shortestDistance.getTotaldistance()+" km");
     }
 
     private void setShortestRecyclerView(FinalJourney shortestDistance) {

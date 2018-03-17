@@ -3,7 +3,6 @@ package com.ford.navigation;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
-import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -93,7 +92,7 @@ public class DataBaseHandler extends SQLiteOpenHelper {
         return getIndexID();
     }
 
-    public int[][] insertIntoRouting(String kpi1) {
+    public int[][] getDijkstraGraph(String kpi1) {
         int size = getMaxSourceID();
         int graph[][] = new int[size][size];
 
@@ -211,8 +210,8 @@ public class DataBaseHandler extends SQLiteOpenHelper {
     }
 
     public int getNeighborTableID(int startNode, int nextNode, String kpi) {
-        String selectQuery = "select id from neighbor where sourceid = ? and NEIGHBORID = ? order by ? asc";
-        Cursor cursor = db.rawQuery(selectQuery, new String[] {String.valueOf(startNode), String.valueOf(nextNode), kpi});
+        String selectQuery = "select id from neighbor where sourceid = ? and NEIGHBORID = ? order by "+kpi+" asc";
+        Cursor cursor = db.rawQuery(selectQuery, new String[] {String.valueOf(startNode), String.valueOf(nextNode)});
 
         if (cursor.moveToFirst()) {
             return cursor.getInt(0);
@@ -319,12 +318,12 @@ public class DataBaseHandler extends SQLiteOpenHelper {
                 int time = Integer.parseInt(data[3]);
                 int neighborPrimaryKey = insertIntoNeighborTable(sourceID, neighborID, modeID, time, Integer.parseInt(data[4]), Integer.parseInt(data[5]));
                 insertIntoIndexTable(neighborID, neighborPrimaryKey, time, Integer.parseInt(data[4]), Integer.parseInt(data[5]));
-                //insertIntoRouting(indexPrimaryKey);
+                //getDijkstraGraph(indexPrimaryKey);
             }
 
-            int graph[][] = insertIntoRouting("time");
-            int graph1[][] = insertIntoRouting("cost");
-            int graph2[][] = insertIntoRouting("distance");
+            int graph[][] = getDijkstraGraph("time");
+            int graph1[][] = getDijkstraGraph("cost");
+            int graph2[][] = getDijkstraGraph("distance");
 
             for (int i = 0; i< getMaxSourceID(); i++) {
                 ShortestPath.dijkstra(graph, i, this, "time");

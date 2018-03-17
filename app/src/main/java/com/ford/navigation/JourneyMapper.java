@@ -47,12 +47,12 @@ public class JourneyMapper {
 //                int time = Integer.parseInt(data[3]);
 //                int neighborPrimaryKey = dataBaseHandler.insertIntoNeighborTable(sourceID, neighborID, modeID, time, Integer.parseInt(data[4]), Integer.parseInt(data[5]));
 //                dataBaseHandler.insertIntoIndexTable(neighborID, neighborPrimaryKey, time, Integer.parseInt(data[4]), Integer.parseInt(data[5]));
-//                //dataBaseHandler.insertIntoRouting(indexPrimaryKey);
+//                //dataBaseHandler.getDijkstraGraph(indexPrimaryKey);
 //            }
 //
-//            int graph[][] = dataBaseHandler.insertIntoRouting(mapGeneratorTime, "time");
-//            int graph1[][] = dataBaseHandler.insertIntoRouting(mapGeneratorCost, "cost");
-//            int graph2[][] = dataBaseHandler.insertIntoRouting(mapGeneratorDistance, "distance");
+//            int graph[][] = dataBaseHandler.getDijkstraGraph(mapGeneratorTime, "time");
+//            int graph1[][] = dataBaseHandler.getDijkstraGraph(mapGeneratorCost, "cost");
+//            int graph2[][] = dataBaseHandler.getDijkstraGraph(mapGeneratorDistance, "distance");
 //
 //            for (int i = 0; i< dataBaseHandler.getMaxSourceID(); i++) {
 //                ShortestPath.dijkstra(graph, i, dataBaseHandler, "time");
