@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="50dp"
-        android:text="Cheapest Option"
+        android:text="Cheapest"
         android:textAlignment="center"
         app:layout_constraintBottom_toTopOf="@id/cheapest_route_info_recycler_view"
         app:layout_constraintTop_toTopOf="parent" />
@@ -54,7 +54,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="25dp"
-        android:text="Fastest Option"
+        android:text="Shortest Time"
         android:layout_marginTop="20dp"
         android:textAlignment="center"
         app:layout_constraintTop_toBottomOf="@id/cheapest_route_info_recycler_view" />
@@ -88,6 +88,47 @@
         app:layout_constraintTop_toBottomOf="@+id/fastest_option_header"
         app:layout_constraintTop_toTopOf="@id/fastest_route_info_recycler_view"
         tools:text="25km" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/shortest_option_header"
+        style="@style/BrandFontSmallHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:text="Shortest Distance"
+        android:textAlignment="center"
+        app:layout_constraintTop_toBottomOf="@id/fastest_route_info_recycler_view" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/shortest_route_info_recycler_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/guideline_price"
+        app:layout_constraintTop_toBottomOf="@+id/shortest_option_header" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/shortest_price"
+        style="@style/BrandFontBody"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@id/guideline_price"
+        app:layout_constraintTop_toBottomOf="@+id/cheapest_option_header"
+        app:layout_constraintTop_toTopOf="@id/shortest_route_info_recycler_view"
+        tools:text="$25" />
+
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/shortest_distance"
+        style="@style/BrandFontBody"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@id/guideline_distance"
+        app:layout_constraintTop_toBottomOf="@+id/cheapest_option_header"
+        app:layout_constraintTop_toTopOf="@id/shortest_route_info_recycler_view"
+        tools:text="25km" />
+
 
 
     <android.support.constraint.Guideline

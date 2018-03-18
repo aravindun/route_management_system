@@ -1,5 +1,7 @@
 package com.ford.navigation;
 
+import android.animation.AnimatorInflater;
+import android.animation.AnimatorSet;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.view.LayoutInflater;
@@ -7,9 +9,8 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
-
-import com.ford.navigation.R;
 
 public class ModalFragment extends DialogFragment {
     Button btnYes;
@@ -17,10 +18,6 @@ public class ModalFragment extends DialogFragment {
     static String DialogBoxContent;
 
     TextView popUpContent;
-
-    public interface YesNoDialogListener {
-        void onFinishYesNoDialog(boolean state);
-    }
 
     //---empty constructor required
     public ModalFragment() {
@@ -46,7 +43,21 @@ public class ModalFragment extends DialogFragment {
 
         getDialog().setTitle(DialogBoxTitle);
 
+        animation(view);
+
         return view;
+    }
+
+    private void animation(View view) {
+        ImageView wheel = (ImageView)view.findViewById(R.id.animation);
+
+        AnimatorSet wheelSet = (AnimatorSet)
+                AnimatorInflater.loadAnimator(getContext(), R.animator.sun_swing);
+        //set the view as target
+        wheelSet.setTarget(wheel);
+        //start the animation
+        wheelSet.start();
+
     }
 
     private OnClickListener btnListener = new OnClickListener() {

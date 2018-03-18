@@ -16,6 +16,38 @@
         tools:text="point 2" />
 
     <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/detailed_description"
+        style="@style/BrandFontBody"
+        android:visibility="gone"
+        android:textColor="@android:color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        tools:text="point 2" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/hops_csv"
+        style="@style/BrandFontBody"
+        android:visibility="gone"
+        android:textColor="@android:color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        tools:text="point 2" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/modes_csv"
+        style="@style/BrandFontBody"
+        android:visibility="gone"
+        android:textColor="@android:color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        tools:text="point 2" />
+
+
+
+    <android.support.v7.widget.AppCompatTextView
         android:id="@+id/source_duration"
         style="@style/BrandFontSmallBody"
         android:layout_width="wrap_content"
